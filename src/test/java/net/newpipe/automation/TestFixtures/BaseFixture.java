@@ -7,7 +7,7 @@ import net.newpipe.automation.Screens.TrendingScreen;
 public class BaseFixture extends BaseTest{
 
     @Step("Login with existing account")
-    public TrendingScreen LaunchAppAndVerify(){
+    public TrendingScreen launchAppAndVerify(){
         return new TrendingScreen(driver).waitForScreenToLoad();
     }
 }

@@ -6,8 +6,12 @@
 - Screen Recording
 - Allure Reports
 
+## Requirements
+- JDK11
+- Appium 1.22.x
+
 ## Appium Installation
-`npm install -g appium`
+`npm install -g appium@1.22`
 
 ## How to run
 
@@ -26,3 +30,9 @@ Generate report
 `cd {repo folder}`
 
 `allure serve -h localhost allure-results`
+
+## Report screenshots
+
+![TestFailed](images/fail.png)
+
+![TestPassed](images/pass.png)

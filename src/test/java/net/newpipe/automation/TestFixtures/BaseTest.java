@@ -37,6 +37,7 @@ public class BaseTest {
                 .withArgument(GeneralServerFlag.RELAXED_SECURITY)
                 .withLogFile(new File(System.getProperty("user.dir") + "/logs/appium.log"))
                 .usingAnyFreePort();
+                .usingPort(4723);
         service = builder.build();
         service.start();
     }
@@ -44,15 +45,16 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() throws IOException {
         File classpathRoot = new File(System.getProperty("user.dir"));
-        File appDir = new File(classpathRoot, "/apps");
+        File appDir = new File(classpathRoot, "/app");
         File app;
 
         loadProperties("appium.properties");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        app = new File(appDir.getCanonicalPath(), "");
+        app = new File(appDir.getCanonicalPath(), "NewPipe.apk");
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, prop.getProperty("NoReset"));
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, prop.getProperty("FullReset"));

@@ -1,14 +1,15 @@
 package net.newpipe.automation.Tests;
 
 
+import net.newpipe.automation.TestFixtures.BaseFixture;
 import org.testng.annotations.Test;
 import static net.newpipe.automation.TestFixtures.BaseTest.driver;
 
-public class SmokeTests {
+public class SmokeTests extends BaseFixture {
 
     @Test(description = "Launch App")
     public void launchApp() {
-        //TODO: Add Test Steps
+        launchAppAndVerify();
     }
 
 }

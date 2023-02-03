@@ -1,20 +1,21 @@
 package net.newpipe.automation.TestHelpers;
 
-import net.newpipe.automation.TestFixtures.BaseTest;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.screenrecording.CanRecordScreen;
-import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
+import net.newpipe.automation.TestFixtures.BaseTest;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
