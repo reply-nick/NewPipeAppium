@@ -37,7 +37,6 @@ public class BaseTest {
                 .withArgument(GeneralServerFlag.RELAXED_SECURITY)
                 .withLogFile(new File(System.getProperty("user.dir") + "/logs/appium.log"))
                 .usingAnyFreePort();
-                .usingPort(4723);
         service = builder.build();
         service.start();
     }
